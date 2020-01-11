@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mixpanel.android:mixpanel-android:5.6.8@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9a7059b03f91beb176c1390090ac37b/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9a7059b03f91beb176c1390090ac37b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9a7059b03f91beb176c1390090ac37b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mixpanel.android/mixpanel-android/5.6.8/3ac5e032fa97e8d86f028deb5d9ad298d6a78d8/mixpanel-android-5.6.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

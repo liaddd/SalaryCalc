@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".activities.SplashActivity">
+
+    <ImageView
+        android:contentDescription="@string/loading_icon"
+        android:id="@+id/splash_activity_icon_image_view"
+        android:layout_width="@dimen/width_80dp"
+        android:layout_height="@dimen/height_80dp"
+        android:src="@mipmap/icon_salary" />
+
+</LinearLayout>

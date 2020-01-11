@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/data_fragment_upper_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/purple_and_blue_gradient_background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/data_fragment_main_header_date_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_32dp"
+                android:fontFamily="@font/rubik_medium"
+                android:text="@string/month_and_year"
+                android:textColor="@android:color/white"
+                android:textDirection="ltr"
+                android:textSize="@dimen/text_16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_32dp"
+            android:fontFamily="@font/rubik_regular"
+            android:text="@string/total_data_amount"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16sp" />
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/margin_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8dp"
+                android:layout_marginRight="@dimen/margin_8dp"
+                android:fontFamily="@font/rubik_regular"
+                android:text="@string/new_shekels"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16sp" />
+
+            <TextView
+                android:id="@+id/data_fragment_total_gross_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_regular"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_36sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/data_fragment_progress_bar"
+        android:layout_width="@dimen/width_80dp"
+        android:layout_height="@dimen/height_80dp"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/data_fragment_empty_state_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/rubik_regular"
+        android:text="@string/empty_state_string"
+        android:textSize="@dimen/text_36sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_below="@+id/data_fragment_upper_layout"
+        android:id="@+id/data_fragment_item_title_container"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/data_fragment_item_head_text_view"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:textColor="@color/lightGray"
+            android:textSize="24sp"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+            android:id="@+id/data_fragment_item_headers_text_view"
+            android:layout_below="@+id/data_fragment_item_head_text_view"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center"
+                android:fontFamily="@font/rubik_bold"
+                android:text="@string/gross"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:fontFamily="@font/rubik_bold"
+                android:text="@string/total"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center"
+                android:fontFamily="@font/rubik_bold"
+                android:text="@string/ending_shift"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:fontFamily="@font/rubik_bold"
+                android:text="@string/starting_shift"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:fontFamily="@font/rubik_bold"
+                android:text="@string/date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_below="@+id/data_fragment_item_headers_text_view"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grayDivider"/>
+    </RelativeLayout>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/data_fragment_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/salary_details_adView"
+        android:layout_below="@+id/data_fragment_item_title_container"
+        android:gravity="center"
+        android:textColor="@color/white" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/salary_details_adView"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_32dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_view_prod_banner_unit_id" />
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="button_height150dp">150dp</dimen>
+    <dimen name="button_width150dp">150dp</dimen>
+    <dimen name="button_height45dp">45dp</dimen>
+
+    <dimen name="main_card_width">250dp</dimen>
+    <dimen name="main_card_height">270dp</dimen>
+
+    <dimen name="start_timer_width">200dp</dimen>
+    <dimen name="start_timer_height">200dp</dimen>
+
+    <dimen name="width_80dp">80dp</dimen>
+    <dimen name="height_80dp">80dp</dimen>
+    <dimen name="width_60dp">60dp</dimen>
+    <dimen name="height_60dp">60dp</dimen>
+    <dimen name="width_250dp">250dp</dimen>
+    <dimen name="height_270dp">270dp</dimen>
+
+    <dimen name="margin_48dp">48dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+
+    <dimen name="text_36sp">36sp</dimen>
+    <dimen name="text_24sp">24sp</dimen>
+    <dimen name="text_16sp">16sp</dimen>
+    <dimen name="width_200dp">200dp</dimen>
+
+</resources>

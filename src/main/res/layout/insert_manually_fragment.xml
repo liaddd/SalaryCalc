@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/insert_manually_head_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_48dp"
+        android:background="@color/title_background_color"
+        android:fontFamily="@font/rubik_medium"
+        android:gravity="center"
+        android:text="@string/insert_manually"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/insert_manually_update_shift_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/update_shift_details"
+        android:textColor="@color/colorAccent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/insert_manually_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="@string/insert_shift_details"
+        android:textColor="@color/subtitle_background_color"
+        android:textSize="@dimen/text_24sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:background="@color/title_background_color"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/insert_manually_enter_text_input_layout"
+                style="@style/TextAppearance.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/insert_manually_enter_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="@string/starting_shift"
+                    android:tag="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/insert_manually_exit_text_input_layout"
+                style="@style/TextAppearance.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/insert_manually_enter_text_input_layout"
+                android:layout_margin="@dimen/margin_16dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/insert_manually_exit_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="@string/ending_shift"
+                    android:tag="2" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/insert_manually_hourly_salary_text_input_layout"
+                style="@style/TextAppearance.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/insert_manually_exit_text_input_layout"
+                android:layout_margin="@dimen/margin_16dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/insert_manually_hourly_salary_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:gravity="right"
+                    android:hint="@string/salary_for_hour"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/insert_manually_fragment_save_btn"
+                android:layout_width="@dimen/button_width150dp"
+                android:layout_height="@dimen/button_height45dp"
+                android:layout_below="@+id/insert_manually_hourly_salary_text_input_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginBottom="@dimen/margin_24dp"
+                android:background="@drawable/rounded_purple_button_background"
+                android:focusable="false"
+                android:text="@string/save"
+                android:textColor="@color/white" />
+
+            <ProgressBar
+                android:id="@+id/insert_manually_progress_bar"
+                android:layout_width="@dimen/width_60dp"
+                android:layout_height="@dimen/height_60dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/banner_layout" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

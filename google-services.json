@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "843767192791",
+    "firebase_url": "https://salarycalc-841a8.firebaseio.com",
+    "project_id": "salarycalc-841a8",
+    "storage_bucket": "salarycalc-841a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843767192791:android:3a5767240eab7749332492",
+        "android_client_info": {
+          "package_name": "com.liad.salarycalc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843767192791-3da6f4sn27orjjardta9jkp9d0vqugsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIeLd5CLUr9-9s_wDTEzZxXGJp2J-7qXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843767192791-3da6f4sn27orjjardta9jkp9d0vqugsk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843767192791-7mn2sl11nhs3f7cv7kcpu3khk4tcos93.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.omerelimelech.SalaryCalc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

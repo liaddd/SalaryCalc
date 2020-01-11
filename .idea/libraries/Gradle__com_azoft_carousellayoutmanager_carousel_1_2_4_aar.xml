@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.azoft.carousellayoutmanager:carousel:1.2.4@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/292b83c68051f0b8cb868c168d3a14e5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/292b83c68051f0b8cb868c168d3a14e5/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.azoft.carousellayoutmanager/carousel/1.2.4/32644c4ad0cca4bff1ac64ebe9d2f67ebfdf9f9d/carousel-1.2.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

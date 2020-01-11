@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#f9f9f9"
+        android:fontFamily="@font/rubik_medium"
+        android:gravity="center_horizontal"
+        android:paddingTop="12dp"
+        android:text="@string/settings"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="@string/insert_salary_details"
+        android:textColor="#4a4a4a"
+        android:textSize="24sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:background="#f9f9f9"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/settings_fragment_salary_amount_text_input_layout"
+                style="@style/TextAppearance.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/settings_fragment_salary_amount_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:hint="@string/hourly_salary"
+                    android:inputType="number"
+                    android:maxLines="1" />
+
+                <requestFocus />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/settings_fragment_ride_text_input_layout"
+                style="@style/TextAppearance.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/settings_fragment_salary_amount_text_input_layout"
+                android:layout_margin="16dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/settings_fragment_ride_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:hint="@string/travels"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/settings_fragment_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/settings_fragment_ride_text_input_layout"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rounded_purple_button_background"
+                android:checkedButton="@+id/monthly"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/daily"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/toggle_switch_button"
+                    android:button="@null"
+                    android:fontFamily="@font/rubik_bold"
+                    android:gravity="center"
+                    android:text="@string/daily"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/monthly"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/toggle_switch_button"
+                    android:button="@null"
+                    android:fontFamily="@font/rubik_bold"
+                    android:gravity="center"
+                    android:text="@string/monthly"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+
+            <!--<com.google.android.material.textfield.TextInputLayout
+                style="@style/TextAppearance.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:hint="@string/break_time" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextAppearance.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:hint="@string/provision_for_pension" />
+
+            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <Button
+                android:id="@+id/settings_fragment_fragment_save_btn"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/settings_fragment_radio_group"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/rounded_purple_button_background"
+                android:text="@string/save"
+                android:textColor="@android:color/white" />
+
+            <ProgressBar
+                android:id="@+id/settings_fragment_progress_bar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+        <include layout="@layout/banner_layout" />
+
+    </RelativeLayout>
+
+</LinearLayout>

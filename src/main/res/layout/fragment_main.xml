@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="ltr"
+    android:id="@+id/main_activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pink_and_orange_gradient_background"
+    tools:context=".activities.MainActivity">
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/first_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/calculate_salary"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_36sp"
+        android:textStyle="bold" />
+
+    <!--<TextView
+        android:id="@+id/second_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/first_title_text_view"
+        android:layout_centerHorizontal="true"
+        android:text="@string/not_in_shift"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:visibility="gone" />-->
+
+    <Button
+        android:id="@+id/main_activity_start_calc_btn"
+        android:layout_width="@dimen/start_timer_width"
+        android:layout_height="@dimen/start_timer_height"
+        android:layout_below="@+id/first_title_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:background="@drawable/white_background_button"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/start_shift"
+        android:textColor="@color/heavyPurple"
+        android:textSize="@dimen/text_24sp" />
+
+    <Button
+        android:layout_below="@+id/main_activity_start_calc_btn"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/main_activity_stop_calc_btn"
+        android:layout_width="@dimen/button_width150dp"
+        android:layout_height="@dimen/button_height45dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:background="@drawable/purple_button_gradient_border"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/end_shift"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_16sp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_activity_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_alignParentBottom="true"
+        android:clipToPadding="false"
+        android:overScrollMode="never"/>
+
+</RelativeLayout>

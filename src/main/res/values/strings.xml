@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">SalaryCalc</string>
+    <string name="calculate_salary">חשב שכר</string>
+    <string name="not_in_shift">לא במשמרת</string>
+    <string name="start_shift">התחל \nמשמרת</string>
+    <string name="end_shift">סיום משמרת</string>
+    <string name="need_to_connect">יש להתחבר תחילה</string>
+    <string name="user_name">שם משתמש</string>
+    <string name="user_password">סיסמא</string>
+    <string name="user_password_verification">אימות סיסמא</string>
+    <string name="forgot_password">שכחת סיסמא?</string>
+    <string name="login_btn">התחבר</string>
+    <string name="login">התחברות</string>
+    <string name="sign_in">הרשמה</string>
+    <string name="save">שמירה</string>
+    <string name="starting_shift">כניסה</string>
+    <string name="ending_shift">יציאה</string>
+    <string name="salary_for_hour">שכר לשעה</string>
+    <string name="insert_manually">הזנה ידנית</string>
+    <string name="insert_shift_details">הזן פרטי משמרת</string>
+    <string name="update_shift_details">עדכון פרטי משמרת</string>
+    <string name="hourly_salary">שכר שעתי</string>
+    <string name="travels">נסיעות</string>
+    <string name="break_time">זמן הפסקה - דקות</string>
+    <string name="insert_salary_details">הזן פרטי שכר</string>
+    <string name="provision_for_pension">הפרשה לפנסיה - %</string>
+    <string name="month_and_year">ינואר 2020</string>
+    <string name="total_data_amount">סה\"כ ברוטו</string>
+    <string name="new_shekels">ש\"ח</string>
+    <string name="total"><font color='#450E61'>סה\"כ</font></string>
+    <string name="daily">יומי</string>
+    <string name="monthly">חודשי</string>
+    <string name="monthly_data_summary">צפייה בנתוני החודש העדכניים</string>
+    <string name="data">נתונים</string>
+    <string name="insert_data_manually">הזנת נתונים ידנית</string>
+    <string name="error">נא למלא</string>
+    <string name="settings">הגדרות</string>
+    <string name="insert_hours_and_salary">הזנת שעת כניסה, יציאה ושכר לשעה.</string>
+    <string name="ok">אישור</string>
+    <string name="cancel">ביטול</string>
+    <string name="auth_failed_error">אחד ו/או יותר מהפרטים שהוזנו אינם נכונים אנא נסה שנית</string>
+    <string name="connect_with_facebook">התחבר עם פייסבוק</string>
+    <string name="delete_shift">מחיקת משמרת</string>
+    <string name="do_you_want_to_delete_shift">האם ברצונך למחוק את המשמרת?</string>
+    <string name="shift_deleted_successfully">משמרת נמחקה בהצלחה</string>
+    <string name="we_ran_into_problem">נתקלנו בבעיה</string>
+    <string name="missing_salary_settings">יש להכניס פרטי שכר במסך הגדרות</string>
+    <string name="data_saved_successfully">המידע נשמר בהצלחה</string>
+    <string name="error_occurred">ארעה שגיאה</string>
+    <string name="date">תאריך</string>
+    <string name="empty_state_string">אין מידע להצגה</string>
+    <string name="or">או</string>
+    <string name="loading_icon">אייקון מסתובב</string>
+    <string name="email_invalid">כתובת מייל אינה תקינה</string>
+    <string name="email_required">שם משתמש צריך להיות כתובת מייל תקינה</string>
+    <string name="email_sent">מייל לאיפוס הסיסמא נשלח בהצלחה! אנא הכנס ללינק האיפוס בכדי לאפס סיסמא</string>
+    <string name="email_wasnt_found">כתובת מייל לא נמצאה אנא נסה שנית</string>
+    <string name="reset_password">איפוס סיסמא</string>
+    <string name="insert_email_address">אנא הזן כתובת אימייל</string>
+    <string name="reset_pass_now">אפס סיסמא</string>
+    <string name="wrong_password">סיסמא שגויה</string>
+    <string name="email_validation_pattern" translatable="false">^.+@.+\\..+$</string>
+    <string name="passwords_arent_equal">סיסמאות אינן זהות</string>
+    <string name="pass_min_length">סיסמא צריכה להכיל לפחות 6 תווים</string>
+    <string name="min_max_amount_error">נא להזין סכום גבוה מ - 0 וקטן מ100,000,000</string>
+    <string name="date_or_time_missing_error">נא לוודא שכל הפרטים תקינים - תאריך ושעה</string>
+    <string name="gross"><font color='#450E61'>ברוטו</font></string>
+
+</resources>
