@@ -40,5 +40,4 @@ Thumbs.db
 .idea/tasks.xml
 .idea/datasources.xml
 .idea/dataSources.ids
-/app/src/main/res/values/secret_strings.xml
 /src/main/res/values/secret_strings.xml
