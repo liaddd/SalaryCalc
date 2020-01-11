@@ -41,3 +41,4 @@ Thumbs.db
 .idea/datasources.xml
 .idea/dataSources.ids
 /src/main/res/values/secret_strings.xml
+/google-services.json
