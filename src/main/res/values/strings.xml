@@ -5,7 +5,7 @@
     <string name="start_shift">התחל \nמשמרת</string>
     <string name="end_shift">סיום משמרת</string>
     <string name="need_to_connect">יש להתחבר תחילה</string>
-    <string name="user_name">שם משתמש</string>
+    <string name="user_name">שם משתמש (דוא״ל)</string>
     <string name="user_password">סיסמא</string>
     <string name="user_password_verification">אימות סיסמא</string>
     <string name="forgot_password">שכחת סיסמא?</string>
@@ -27,7 +27,7 @@
     <string name="month_and_year">ינואר 2020</string>
     <string name="total_data_amount">סה\"כ ברוטו</string>
     <string name="new_shekels">ש\"ח</string>
-    <string name="total"><font color='#450E61'>סה\"כ</font></string>
+    <string name="total">סה\"כ</string>
     <string name="daily">יומי</string>
     <string name="monthly">חודשי</string>
     <string name="monthly_data_summary">צפייה בנתוני החודש העדכניים</string>
@@ -35,7 +35,7 @@
     <string name="insert_data_manually">הזנת נתונים ידנית</string>
     <string name="error">נא למלא</string>
     <string name="settings">הגדרות</string>
-    <string name="insert_hours_and_salary">הזנת שעת כניסה, יציאה ושכר לשעה.</string>
+    <string name="insert_hours_and_salary">הזנת כניסה, יציאה ושכר שעתי</string>
     <string name="ok">אישור</string>
     <string name="cancel">ביטול</string>
     <string name="auth_failed_error">אחד ו/או יותר מהפרטים שהוזנו אינם נכונים אנא נסה שנית</string>
@@ -64,6 +64,6 @@
     <string name="pass_min_length">סיסמא צריכה להכיל לפחות 6 תווים</string>
     <string name="min_max_amount_error">נא להזין סכום גבוה מ - 0 וקטן מ100,000,000</string>
     <string name="date_or_time_missing_error">נא לוודא שכל הפרטים תקינים - תאריך ושעה</string>
-    <string name="gross"><font color='#450E61'>ברוטו</font></string>
+    <string name="gross">ברוטו</string>
 
 </resources>

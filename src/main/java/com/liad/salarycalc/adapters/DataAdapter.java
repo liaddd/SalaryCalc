@@ -54,7 +54,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         holder.startTV.setText(dateFormatter.getFormattedHour(shiftItem.getStartTimeInMillis()));
         holder.endTV.setText(dateFormatter.getFormattedHour(shiftItem.getEndtimeInMillis()));
         holder.totalV.setText(dateFormatter.getRangeBetweenHours(shiftItem.getStartTimeInMillis(), shiftItem.getEndtimeInMillis()));
-        holder.dateTV.setText(dateFormatter.getFormattedDateInHebrew(shiftItem.getStartTime()));
+        holder.dateTV.setText(dateFormatter.getFormattedDateInHebrew(shiftItem.getStartTime() * 1000));
 
         holder.rowItemContainer.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity {
         changeFragment(MainFragment.newInstance(), false);
     }
 
-    private void initInterstitialAd() {
+    public void initInterstitialAd() {
         final InterstitialAd interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId(getString(R.string.ad_view_prod_interstitial_unit_id));
         interstitialAd.loadAd(new AdRequest.Builder().build());

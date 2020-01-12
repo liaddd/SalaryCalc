@@ -46,6 +46,7 @@ public class LoginActivity extends BaseActivity implements View.OnTouchListener,
     private final String TAG = getClass().getSimpleName();
     private FirebaseAuth mAuth;
     private EditText usernameET, passET, passVerifyET;
+    private Button loginButton;
     private CallbackManager callbackManager;
     private LoginButton facebookLoginButton;
     private DatabaseReference dbRef;
@@ -92,7 +93,7 @@ public class LoginActivity extends BaseActivity implements View.OnTouchListener,
         passET = findViewById(R.id.login_activity_pass_edit_text);
         passVerifyET = findViewById(R.id.login_activity_pass_verification_edit_text);
 
-        Button loginButton = findViewById(R.id.login_activity_log_in_button);
+        loginButton = findViewById(R.id.login_activity_log_in_button);
         loginButton.setOnClickListener(this);
 
         callbackManager = CallbackManager.Factory.create();
@@ -200,9 +201,6 @@ public class LoginActivity extends BaseActivity implements View.OnTouchListener,
                 loginWithFacebook();
                 break;
             case R.id.login_activity_login_or_sign_up_text_view:
-                String loginOrSignInCurrentText = loginOrSignInTV.getText().toString();
-
-                loginOrSignState = loginOrSignInCurrentText.equals(getString(R.string.login)) ? STATE.LOG_IN : STATE.REGISTER;
                 handleStateChanged();
                 break;
             case R.id.login_activity_forgot_pass_text_view:
@@ -269,8 +267,11 @@ public class LoginActivity extends BaseActivity implements View.OnTouchListener,
     }
 
     private void handleStateChanged() {
+        String loginOrSignInCurrentText = loginOrSignInTV.getText().toString();
+        loginOrSignState = loginOrSignInCurrentText.equals(getString(R.string.login)) ? STATE.LOG_IN : STATE.REGISTER;
         passVerificationContainer.setVisibility(loginOrSignState == STATE.REGISTER ? View.VISIBLE : View.GONE);
         loginOrSignInTV.setText(getString(loginOrSignState == STATE.REGISTER ? R.string.login : R.string.sign_in));
+        loginButton.setText(getString(loginOrSignState == STATE.REGISTER ? R.string.sign_in : R.string.login_btn));
     }
 
     private void signInWithEmailAndPassword() {

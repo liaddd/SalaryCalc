@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -25,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.liad.salarycalc.Constants;
 import com.liad.salarycalc.R;
 import com.liad.salarycalc.activities.BaseActivity;
+import com.liad.salarycalc.activities.MainActivity;
 import com.liad.salarycalc.adapters.DataAdapter;
 import com.liad.salarycalc.entities.ShiftItem;
 import com.liad.salarycalc.managers.AnalyticsManager;
@@ -56,6 +58,7 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
     private ShiftItem shiftItem;
     private int year, month;
     private View view;
+    private Button emptyStateBtn;
     private SharedPreferences pref;
 
 
@@ -68,7 +71,7 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
         AnalyticsManager.getInstance(getContext()).sendData(AnalyticsManager.AnalyticsEvents.ENTER_DATA_FRAGMENT, null);
 
         if (view == null) {
-            view = inflater.inflate(R.layout.data_fragment, container , false);
+            view = inflater.inflate(R.layout.data_fragment, container, false);
             initViewsAndListeners(view);
             fetchData();
         } else {
@@ -83,6 +86,8 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Context context = getContext();
+        if (context != null) ((MainActivity) context).initInterstitialAd();
     }
 
     private void initViewsAndListeners(View view) {
@@ -94,7 +99,10 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
         titleContainer = view.findViewById(R.id.data_fragment_item_title_container);
         mainHeaderDateTV = view.findViewById(R.id.data_fragment_main_header_date_text_view);
         mainHeaderDateTV.setOnClickListener(this);
+
         emptyStateTV = view.findViewById(R.id.data_fragment_empty_state_text_view);
+        emptyStateBtn = view.findViewById(R.id.data_fragment_empty_state_button);
+        emptyStateBtn.setOnClickListener(this);
 
         month = calendar.get(Calendar.MONDAY) + 1;
         year = calendar.get(Calendar.YEAR);
@@ -148,7 +156,7 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
 
                 if (context != null) pref = SharedPreferencesManager.getInstance(context).getPref();
                 month = pref.getInt(Constants.MONTH, month);
-                year = pref.getInt(Constants.YEAR , year);
+                year = pref.getInt(Constants.YEAR, year);
                 // get shifts by specific year and month
                 adapter.notifyDateChange(month, year);
             }
@@ -163,6 +171,7 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
     public void showEmptyState(boolean show) {
         emptyStateTV.setVisibility(show ? View.VISIBLE : View.GONE);
         titleContainer.setVisibility(show ? View.GONE : View.VISIBLE);
+        emptyStateBtn.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     public void setTotalGrossTV(int totalGross) {
@@ -171,14 +180,18 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.data_fragment_main_header_date_text_view:
-                Context context = getContext();
-                if (context != null) {
+        Context context = getContext();
+        if (context != null) {
+            switch (v.getId()) {
+                case R.id.data_fragment_main_header_date_text_view:
                     DatePickerDialog datePickerDialog = new DatePickerDialog(context, AlertDialog.THEME_HOLO_LIGHT, this, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
                     datePickerDialog.show();
                     break;
-                }
+                case R.id.data_fragment_empty_state_button:
+                    AnalyticsManager.getInstance(getContext()).sendData(AnalyticsManager.AnalyticsEvents.ENTER_INSERT_MANUALLY_DATA_FRAGMENT, null);
+                    ((MainActivity) context).changeFragment(InsertManuallyFragment.newInstance(), true);
+                    break;
+            }
         }
     }
 
@@ -188,8 +201,8 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
         String selectedMonth = dateFormatter.getHebrewMonth(month + 1);
         pref = SharedPreferencesManager.getInstance(getContext()).getPref();
         SharedPreferences.Editor editor = SharedPreferencesManager.getInstance(getContext()).getEditor();
-        editor.putInt(Constants.MONTH , month + 1);
-        editor.putInt(Constants.YEAR , year);
+        editor.putInt(Constants.MONTH, month + 1);
+        editor.putInt(Constants.YEAR, year);
         editor.apply();
         mainHeaderDateTV.setText(String.format(Locale.getDefault(), "%s %d", selectedMonth, year));
         adapter.notifyDateChange(month + 1, year);

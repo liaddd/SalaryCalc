@@ -81,15 +81,30 @@
         android:layout_height="@dimen/height_80dp"
         android:layout_centerInParent="true" />
 
+
     <TextView
         android:id="@+id/data_fragment_empty_state_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_below="@+id/data_fragment_upper_layout"
+        android:layout_centerHorizontal="true"
         android:fontFamily="@font/rubik_regular"
         android:text="@string/empty_state_string"
         android:textSize="@dimen/text_36sp"
         android:visibility="gone" />
+
+    <Button
+        android:id="@+id/data_fragment_empty_state_button"
+        android:layout_width="@dimen/button_width150dp"
+        android:layout_height="@dimen/button_height45dp"
+        android:text="@string/insert_manually"
+        android:background="@drawable/rounded_purple_button_background"
+        android:layout_marginTop="@dimen/margin_48dp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_below="@+id/data_fragment_empty_state_text_view" />
 
     <RelativeLayout
         android:layout_below="@+id/data_fragment_upper_layout"
