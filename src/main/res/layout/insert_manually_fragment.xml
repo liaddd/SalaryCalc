@@ -23,7 +23,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="@dimen/margin_24dp"
         android:layout_marginEnd="@dimen/margin_16dp"
-        android:layout_marginRight="@dimen/margin_16dp"
+        android:layout_marginStart="@dimen/margin_16dp"
         android:fontFamily="@font/rubik_medium"
         android:text="@string/update_shift_details"
         android:textColor="@color/colorAccent"

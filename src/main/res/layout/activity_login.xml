@@ -83,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_purple_button_background_with_straight_corner"
                 android:ellipsize="start"
+                android:textDirection="anyRtl"
                 android:gravity="center_vertical|start"
                 android:hint="@string/user_password"
                 android:inputType="textPassword"

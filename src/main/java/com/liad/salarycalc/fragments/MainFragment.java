@@ -1,5 +1,6 @@
 package com.liad.salarycalc.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,7 +116,17 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             userHourlySalary = pref.getString(Constants.USER_HOURLY_SALARY, "");
 
             handler = new Handler();
+
             startBtn = view.findViewById(R.id.main_activity_start_calc_btn);
+
+            DisplayMetrics metrics = new DisplayMetrics();
+            ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            if (metrics.heightPixels <= 1920) {
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((int) getResources().getDimension(R.dimen.button_width150dp), (int) getResources().getDimension(R.dimen.button_width150dp));
+                params.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                params.addRule(RelativeLayout.BELOW, R.id.first_title_text_view);
+                startBtn.setLayoutParams(params);
+            }
             startBtn.setOnClickListener(this);
 
             stopBtn = view.findViewById(R.id.main_activity_stop_calc_btn);

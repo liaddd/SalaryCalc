@@ -2,15 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr"
     android:background="@android:color/white"
     android:gravity="center_horizontal"
+    android:layoutDirection="ltr"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:background="#f9f9f9"
+        android:background="@color/title_background_color"
         android:fontFamily="@font/rubik_medium"
         android:gravity="center_horizontal"
         android:paddingTop="12dp"
@@ -24,7 +24,7 @@
         android:fontFamily="@font/rubik_bold"
         android:text="@string/insert_salary_details"
         android:textColor="#4a4a4a"
-        android:textSize="24sp" />
+        android:textSize="@dimen/text_24sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 style="@style/TextAppearance.App.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp">
+                android:layout_margin="@dimen/margin_16dp">
 
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/settings_fragment_salary_amount_text_input_layout"
-                android:layout_margin="16dp">
+                android:layout_margin="@dimen/margin_16dp">
 
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -78,14 +78,26 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/settings_fragment_ride_explanation_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/settings_fragment_ride_text_input_layout"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/grayDivider"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:fontFamily="@font/rubik_medium"
+                android:text="@string/please_choose_ride_type"
+                android:textSize="@dimen/text_16sp" />
+
             <RadioGroup
                 android:id="@+id/settings_fragment_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_below="@+id/settings_fragment_ride_text_input_layout"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_below="@+id/settings_fragment_ride_explanation_text"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginRight="@dimen/margin_16dp"
                 android:background="@drawable/rounded_purple_button_background"
                 android:checkedButton="@+id/monthly"
                 android:orientation="horizontal">
@@ -95,16 +107,18 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:textColor="@drawable/toggle_switch_button"
                     android:background="@drawable/toggle_switch_button"
                     android:button="@null"
                     android:fontFamily="@font/rubik_bold"
                     android:gravity="center"
                     android:text="@string/daily"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/text_16sp" />
 
                 <RadioButton
                     android:id="@+id/monthly"
                     android:layout_width="0dp"
+                    android:textColor="@drawable/toggle_switch_button"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/toggle_switch_button"
@@ -112,7 +126,7 @@
                     android:fontFamily="@font/rubik_bold"
                     android:gravity="center"
                     android:text="@string/monthly"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/text_16sp" />
             </RadioGroup>
 
 

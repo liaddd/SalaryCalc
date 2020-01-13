@@ -6,8 +6,8 @@ android {
         applicationId "com.liad.salarycalc"
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         resConfig "heb" /** delete to use localization */

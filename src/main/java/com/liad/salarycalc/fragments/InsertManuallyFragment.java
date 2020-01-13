@@ -4,6 +4,7 @@ package com.liad.salarycalc.fragments;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,9 +28,9 @@ import com.liad.salarycalc.Constants;
 import com.liad.salarycalc.R;
 import com.liad.salarycalc.activities.MainActivity;
 import com.liad.salarycalc.entities.ShiftItem;
-import com.liad.salarycalc.entities.User;
 import com.liad.salarycalc.managers.AnalyticsManager;
 import com.liad.salarycalc.managers.FirebaseManager;
+import com.liad.salarycalc.managers.SharedPreferencesManager;
 import com.liad.salarycalc.utills.DateFormatter;
 import com.liad.salarycalc.utills.Validator;
 
@@ -85,6 +86,7 @@ public class InsertManuallyFragment extends Fragment implements View.OnClickList
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getViewAndListeners(view);
         Bundle bundle = getArguments();
         if (bundle != null) {
             editMode = bundle.getBoolean(Constants.EDIT_MODE);
@@ -92,9 +94,8 @@ public class InsertManuallyFragment extends Fragment implements View.OnClickList
             startShift = bundle.getLong(Constants.START_SHIFT);
             endShit = bundle.getLong(Constants.END_SHIFT);
             hourlySalary = bundle.getInt(Constants.USER_HOURLY_SALARY);
+            if (editMode) changeMode(view);
         }
-        getViewAndListeners(view);
-        if (editMode) changeMode(view);
     }
 
     private void getViewAndListeners(View view) {
@@ -113,9 +114,15 @@ public class InsertManuallyFragment extends Fragment implements View.OnClickList
         hourlySalaryTIL = view.findViewById(R.id.insert_manually_hourly_salary_text_input_layout);
         hourlySalaryET = view.findViewById(R.id.insert_manually_hourly_salary_edit_text);
 
-        if (hourlySalary > 0) hourlySalaryET.setText(String.valueOf(hourlySalary));
-        else
-            hourlySalaryET.setText(User.getInstance().getHourSalary() > 0 ? User.getInstance().getHourSalary() + "" : null);
+        SharedPreferences pref = SharedPreferencesManager.getInstance(context).getPref();
+        String savedSalary = pref.getString(Constants.USER_HOURLY_SALARY, null);
+        hourlySalary = savedSalary != null ? Integer.parseInt(savedSalary) : hourlySalary;
+        if (hourlySalary > 0) hourlySalaryET.post(new Runnable() {
+            @Override
+            public void run() {
+                hourlySalaryET.setText(String.valueOf(hourlySalary));
+            }
+        });
 
 
         dateFormatter = DateFormatter.getInstance();
@@ -145,6 +152,12 @@ public class InsertManuallyFragment extends Fragment implements View.OnClickList
             titleTV.setText(getString(R.string.update_shift_details));
             enterET.setText(dateFormatter.getStrFromTimeStamp(startShift));
             exitET.setText(dateFormatter.getStrFromTimeStamp(endShit));
+            hourlySalaryET.post(new Runnable() {
+                @Override
+                public void run() {
+                    hourlySalaryET.setText(String.valueOf(hourlySalary));
+                }
+            });
         }
     }
 
