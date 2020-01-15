@@ -86,8 +86,6 @@ public class DataFragment extends Fragment implements View.OnClickListener, Date
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Context context = getContext();
-        if (context != null) ((MainActivity) context).initInterstitialAd();
     }
 
     private void initViewsAndListeners(View view) {
